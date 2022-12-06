@@ -1,0 +1,18 @@
+{
+  "Agent-Based-Framework": {
+    "activated": true,
+    "output_interval": 20,
+    "camera-position": [-770, 150, 524],
+    "camera-look_at": [0, 0, 0],
+    "camera-angle": 20.0,
+    "outputVideo": false,
+    "pxWidth": "1832",
+    "pxHeight": "1376",
+    "runId": 1,
+    "Lightsources": {
+      "pos1": [0, 0, 1000],
+      "pos2": [0, -1000, 0],
+      "pos3": [-1000, 0, 0]
+    }
+  }
+}

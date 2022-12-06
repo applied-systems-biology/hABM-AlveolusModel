@@ -1,0 +1,33 @@
+﻿{
+	"Agent-Based-Framework": {
+		"Rates": {
+			"AspergillusResting": {
+				"type": "ConstantRate",
+				"rate": -1.0
+			},
+			"AspergillusSwelling": {
+				"type": "ConstantRate",
+				"rate": -1.0
+			},
+			"nointerplay": {
+				"type": "ConstantRate",
+				"rate": -1.0
+			},
+			"phagocytose": {
+				"type": "ConditionalRate",
+				"rate": 1,
+				"condition": "Macrophage"
+			},
+			"nointerplay-adherence": {
+				"type": "ConditionalRate",
+				"rate": 0.01,
+				"condition": "Macrophage"
+			},
+			"lysis": {
+				"type": "ConditionalRate",
+				"rate": 0.01,
+				"condition": "Macrophage"
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+  "Agent-Based-Framework": {
+    "runs": 1,
+    "xruns_stats": 0,
+    "number_of_threads": 1,
+    "seed": 0,
+    "config_path": "configurations/namStudyHuman",
+    "output_dir": "configurations/namStudyHuman",
+    "parameter_screening": {
+      "nOfM": [4],
+      "nOfCon": [1],
+      "dc": [20],
+      "sAEC": [1500]
+    }
+  }
+}
+

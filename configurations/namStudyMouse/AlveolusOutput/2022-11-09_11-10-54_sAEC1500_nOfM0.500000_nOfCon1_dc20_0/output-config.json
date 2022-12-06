@@ -1,0 +1,8 @@
+{
+  "Agent-Based-Framework": {
+    "activated": false,
+    "output_interval": 200,
+    "output_csv": false,
+    "toc_on": true
+  }
+}

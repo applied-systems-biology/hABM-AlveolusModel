@@ -1,0 +1,199 @@
+﻿{
+  "Agent-Based-Framework": {
+    "topic": "AlveolusOutput",
+    "timestepping": 0.1,
+    "max_time": 380,
+    "dimensions": 2,
+    "use_interactions": true,
+    "stopping_criteria": ["FirstPassageTime"],
+    "Sites": [
+      {
+        "identifier": "as1",
+        "Passive Movement": false,
+        "boundary_condition": 3,
+        "boundary_input": 2,
+        "NeighbourhoodLocator": {
+          "type": "BalloonListNHLocator",
+          "grid_constant": 5.0,
+          "interaction_check_interval": 1
+        },
+        "type": "AlveoleSite",
+        "AlveoleSite": {
+          "conidia_distribution": 1,
+          "pok_entry": 1,
+          "organism": 1,
+          "boundary_particle_input": 11,
+          "site_center": [0, 0, 0],
+          "site_radius": 116.5,
+          "theta_lower_bound": 1.05,
+          "include_pores_of_kohn": true,
+          "breathing_enabled": false,
+          "respiration_frequency": 26,
+          "site_radius_max": 136.5,
+          "r0_chemotaxis_source-aec1": 48,
+          "r0_chemotaxis_source-aec2": 5.27,
+          "lambda_input_rate": 0.0000000001454957,
+          "surfactant_thickness": 5.0,
+          "thickness_of_border": 3.0,
+          "radius_pores_of_kohn": 2.99,
+          "number_of_pok": 24,
+          "number_of_aec2": 84,
+          "radius_alv_epith_type_one": 48.0,
+          "objects_per_row": 13,
+          "length_alv_epth_type_two": 9.34
+        },
+        "Particles": {
+          "diffusion_constant": 20,
+          "molecule_secretion_per_cell": 0,
+          "particle_delauney_input_file": "particle-dist/10000particles-delauney.xml"
+        },
+        "AgentManager": {
+          "Types": ["Macrophage", "AspergillusFumigatus"],
+          "Agents": {
+            "AspergillusFumigatus": {
+              "type": "AspergillusFumigatus",
+              "initial_distribution": 0,
+              "number": 1,
+              "Morphology": {
+                "color": "redTransp",
+                "SphericalMorphology": {
+                  "radius": 1.25,
+                  "stddev": 0
+                }
+              },
+              "Cell States": {
+                "InitialCellState": {
+                  "next_states": {
+                    "AspergillusResting": {
+                      "rate": "AspergillusResting"
+                    }
+                  }
+                },
+                "AspergillusResting": {
+                  "next_states": {
+                    "AspergillusSwelling": {
+                      "rate": "AspergillusSwelling"
+                    }
+                  }
+                },
+                "AspergillusSwelling": {},
+                "AspergillusHyphal": {},
+                "AspergillusImmortal": {},
+                "Death": {},
+                "DeathByAEC": {}
+              }
+            },
+            "Macrophage": {
+              "type": "Macrophage",
+              "initial_distribution": 1,
+              "binomial": false,
+              "number": 8,
+              "input_distribution_path": "AMdistributions/Human/",
+              "r0_chemotaxis_source-aec2": 5.27,
+              "k_r": 0.05,
+              "k_i": 0.01,
+              "k_blr": 0.01,
+              "pok_entry": true,
+              "Movement": {
+                "type": "BiasedPersistentRandomWalk",
+                "speed": {
+                  "mean": 4,
+                  "stddev": 0
+                },
+                "persistence_time": 1
+              },
+              "Morphology": {
+                "color": "greenTransp",
+                "SphericalMorphology": {
+                  "radius": 10.6,
+                  "stddev": 0
+                }
+              },
+              "Cell States": {
+                "InitialCellState": {},
+                "Death": {}
+              }
+            }
+          }
+        }
+      }
+    ],
+    "Interactions": {
+      "IdenticalCellsInteraction": {
+        "type": "IdenticalCellsInteraction",
+        "Interaction States": {
+          "InitialInteractionState": {
+            "next_states": {
+              "NoInterplay": {
+                "rate": "nointerplay"
+              }
+            }
+          },
+          "NoInterplay": {
+            "type": "Contacting"
+          }
+        }
+      },
+      "PhagocyteMacrophageInteraction": {
+        "type": "PhagocyteFungusInteraction",
+        "Conditions": {
+          "Macrophage": [],
+          "AspergillusFumigatus": ["AspergillusResting","AspergillusSwelling"]
+        },
+        "Interaction States": {
+          "InitialInteractionState": {
+            "type": "InteractionType",
+            "next_states": {
+              "Phagocytose": {
+                "rate": "phagocytose"
+              }
+            }
+          },
+          "Phagocytose": {
+            "type": "Ingestion",
+            "next_states": {
+              "Lysis": {
+                "rate": "lysis"
+              }
+            }
+          },
+          "Adherence": {
+            "type": "Contacting",
+            "adhere": true,
+            "next_states": {
+              "NoInterplay": {
+                "rate": "nointerplay-adherence"
+              }
+            }
+          },
+          "Lysis": {
+            "type": "Ingestion"
+          },
+          "Pierce": {
+            "type": "Contacting"
+          },
+          "NoInterplay": {
+            "type": "Contacting"
+          }
+        }
+      },
+      "AvoidanceInteraction": {
+        "type": "AvoidanceInteraction",
+        "Interaction States": {
+          "InitialInteractionState": {
+            "type": "InteractionType",
+            "next_states": {
+              "Avoidance": {
+                "rate": "nointerplay"
+              }
+            }
+          },
+          "Avoidance": {
+            "type": "Contacting",
+            "must_overhead": 0.05
+          }
+        }
+      }
+    }
+  }
+}
