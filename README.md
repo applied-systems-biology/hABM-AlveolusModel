@@ -1,6 +1,6 @@
 # Hybrid Agent-Based Model (hABM) - Alveolus Model
 
-A computational model for simulating early *Aspergillus fumigatus* infection scenarios in the human or murine alveolus.
+An analytical and computational model framework for simulating early *Aspergillus fumigatus* infection scenarios in the human or murine alveolus.
 
 Christoph Saffer, Paul Rudolph, Sandra Timme, Marco Blickensdorf, Johannes Pollmächer
 
@@ -16,7 +16,7 @@ See the LICENSE file provided with the code for the full license.
 ## Project
 
 Welcome to the repository of the Hybrid Agent-Based Model (hABM) - Alveolus Model developed by the **Applied Systems Biology** team of **Leibniz-HKI**.
-The main purpose of this framework includes simulating an early *Aspergillus fumigatus* infection scenario in one human or murine alveolus.
+The main purpose of this framework includes simulating an early *Aspergillus fumigatus* infection scenario in one human or murine alveolus. Moreover, we provide an analytical Surrogate Infection Model (SIM) that predicts hABM outcomes in a fraction of time and allows extended analyses of infection dynamics.
 
 ![](alveolusImage.png "To-scale representation of one murine (left) and human (right) Alveolus").
 
@@ -111,7 +111,7 @@ For parameter screening, the cartesian product of all input sets in the `config_
 ## General structure
 The framework is structured as followed:
 
-- **Analysis_SurrogateInfectionModel**: Data processing and training a Surrogate Infection Model (SIM)
+- **Analysis_SurrogateInfectionModel**: Data processing and framework for analytical Surrogate Infection Model (SIM)
 - **configurations**: configuration folders including `.json`files that define single scenarios
 - **input**: precalculated data or parameters for the model
 - **src**: source `.cpp` and header `.h` files of the framework
