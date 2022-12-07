@@ -1,4 +1,4 @@
-//  Copyright by Christoph Saffer, Paul Rudolph, Marco Blickensdorf, Johannes Pollmächer
+//  Copyright by Christoph Saffer, Paul Rudolph, Sandra Timme, Marco Blickensdorf, Johannes Pollmächer
 //  Research Group Applied Systems Biology - Head: Prof. Dr. Marc Thilo Figge
 //  https://www.leibniz-hki.de/en/applied-systems-biology.html
 //  HKI-Center for Systems Biology of Infection

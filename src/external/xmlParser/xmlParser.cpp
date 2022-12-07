@@ -1,4 +1,4 @@
-//  Copyright by Christoph Saffer, Paul Rudolph, Marco Blickensdorf, Johannes Pollmächer
+//  Copyright by Christoph Saffer, Paul Rudolph, Sandra Timme, Marco Blickensdorf, Johannes Pollmächer
 //  Research Group Applied Systems Biology - Head: Prof. Dr. Marc Thilo Figge
 //  https://www.leibniz-hki.de/en/applied-systems-biology.html
 //  HKI-Center for Systems Biology of Infection
@@ -8,57 +8,6 @@
 //  This code is licensed under BSD 2-Clause
 //  See the LICENSE file provided with this code for the full license.
 
-/**
- ****************************************************************************
- * <P> XML.c - implementation file for basic XML parser written in ANSI C++
- * for portability. It works by using recursion and a node tree for breaking
- * down the elements of an XML document.  </P>
- *
- * @version     V2.43
- * @author      Frank Vanden Berghen
- *
- * NOTE:
- *
- *   If you add "#define STRICT_PARSING", on the first line of this file
- *   the parser will see the following XML-stream:
- *      <a><b>some text</b><b>other text    </a>
- *   as an error. Otherwise, this tring will be equivalent to:
- *      <a><b>some text</b><b>other text</b></a>
- *
- * NOTE:
- *
- *   If you add "#define APPROXIMATE_PARSING" on the first line of this file
- *   the parser will see the following XML-stream:
- *     <data name="n1">
- *     <data name="n2">
- *     <data name="n3" />
- *   as equivalent to the following XML-stream:
- *     <data name="n1" />
- *     <data name="n2" />
- *     <data name="n3" />
- *   This can be useful for badly-formed XML-streams but prevent the use
- *   of the following XML-stream (problem is: tags at contiguous levels
- *   have the same names):
- *     <data name="n1">
- *        <data name="n2">
- *            <data name="n3" />
- *        </data>
- *     </data>
- *
- * NOTE:
- *
- *   If you add "#define _XMLPARSER_NO_MESSAGEBOX_" on the first line of this file
- *   the "openFileHelper" function will always display error messages inside the
- *   console instead of inside a message-box-window. Message-box-windows are
- *   available on windows 9x/NT/2000/XP/Vista only.
- *
- * Copyright (c) 2002, Business-Insight
- * <a href="http://www.Business-Insight.com">Business-Insight</a>
- * All rights reserved.
- * See the file "AFPL-license.txt" about the licensing terms
- *
- ****************************************************************************
- */
 #ifndef _CRT_SECURE_NO_DEPRECATE
 #define _CRT_SECURE_NO_DEPRECATE
 #endif
