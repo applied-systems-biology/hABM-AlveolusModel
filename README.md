@@ -2,7 +2,7 @@
 
 A computational model for simulating early *Aspergillus fumigatus* infection scenarios in the human or murine alveolus.
 
-Christoph Saffer, Paul Rudolph, Marco Blickensdorf, Johannes Pollmächer
+Christoph Saffer, Paul Rudolph, Sandra Timme, Marco Blickensdorf, Johannes Pollmächer
 
 Research Group Applied Systems Biology - Head: Prof. Dr. Marc Thilo Figge\
 https://www.leibniz-hki.de/en/applied-systems-biology.html \
@@ -39,14 +39,14 @@ The alveolar entrance ring and the pores of Kohn (black) are the boundaries of t
 
 After cloning the repository to a local folder (here: abm/), the framework can be built via cmake:
 
-`~/abm$ mkdir build; cd build`
+`~/hABM-AlveolusModel$ mkdir build; cd build`
 
 Release or Debug mode: 
 
-`~/abm/build$ cmake -DCMAKE_BUILD_TYPE=Release .. `
-or `~/abm/build$ cmake -DCMAKE_BUILD_TYPE=Debug .. `
+`~/hABM-AlveolusModel/build$ cmake -DCMAKE_BUILD_TYPE=Release .. `
+or `~/hABM-AlveolusModel/build$ cmake -DCMAKE_BUILD_TYPE=Debug .. `
 
-`~/abm/build$ make `
+`~/hABM-AlveolusModel/build$ make `
 
 The compiled files can be found in the build/ folder.
 
@@ -54,9 +54,9 @@ The compiled files can be found in the build/ folder.
 
 To test if everything was compiled accordingly, run test configuration:
 
-`~/abm$ cd build/test/`
+`~/hABM-AlveolusModel/build$ cd test/`
 
-`~/abm/build/test$ ./test_configurations`
+`~/hABM-AlveolusModel/build/test$ ./test_configurations`
 
 (Test must be executed from the folder)
 
@@ -64,9 +64,9 @@ If the tests pass, the framework and its corresponding libraries were successful
 
 ### Model usage and input
 
-Generally, the executable program `build$/src/hABM` must be run with a `.json` configuration file as program argument
+Generally, the executable program `build/src/hABM` must be run with a `.json` configuration file as program argument
 
-`~/abm$ build$/src/hABM <config-file>.json` 
+`~/hABM-AlveolusModel$ build$/src/hABM <config-file>.json` 
 
 Additional input files 
 - `analyser-config.json`
@@ -102,9 +102,9 @@ The parameters for each scenario can be adjusted in the `.json` files in the cor
 
 To run simulations, execute:
 
-Human: `~/abm$ build/src/hABM config_human.json`
+Human: `~/hABM-AlveolusModel$ build/src/hABM config_human.json`
 
-Mouse: `~/abm$ build/src/hABM config_mouse.json`
+Mouse: `~/hABM-AlveolusModel$ build/src/hABM config_mouse.json`
 
 For parameter screening, the cartesian product of all input sets in the `config_*.json` file in `parameter_screening` is calculated and the simulations are started for all parameter combinations.
 
