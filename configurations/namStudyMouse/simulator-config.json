@@ -34,8 +34,9 @@
           "length_alv_epth_type_two": 8.12
         },
         "Particles": {
-          "diffusion_constant": 0,
+          "diffusion_constant": 20,
           "molecule_secretion_per_cell": 0,
+          "draw_isolines": false,
           "particle_delauney_input_file": "particle-dist/513particles-delauney.xml"
         },
         "AgentManager": {

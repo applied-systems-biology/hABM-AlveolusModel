@@ -36,6 +36,7 @@
         "Particles": {
           "diffusion_constant": 20,
           "molecule_secretion_per_cell": 0,
+          "draw_isolines": false,
           "particle_delauney_input_file": "particle-dist/10000particles-delauney.xml"
         },
         "AgentManager": {
