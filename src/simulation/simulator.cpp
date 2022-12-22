@@ -159,7 +159,7 @@ void Simulator::handleCmdInputArgs(const std::unordered_map<std::string, std::st
             SYSTEM_STDOUT("Set parameter: " << key << " = " << value);
             updateTimestepForDC(parameters_.site_parameters->particle_manager_parameters.diffusion_constant);
         }
-        if ("srAEC" == key) {
+        if ("sAEC" == key) {
             parameters_.site_parameters->particle_manager_parameters.molecule_secretion_per_cell = std::stod(value);
             SYSTEM_STDOUT("Set parameter: " << key << " = " << value);
         }
