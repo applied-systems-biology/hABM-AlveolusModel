@@ -11,6 +11,7 @@
 #ifndef POVFILE_H
 #define    POVFILE_H
 
+#include <fstream>
 #include <string>
 #include <vector>
 

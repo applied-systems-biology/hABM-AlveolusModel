@@ -11,6 +11,7 @@
 #ifndef INSITUMEASUREMENTS_H
 #define INSITUMEASUREMENTS_H
 
+#include <fstream>
 #include <unordered_set>
 #include <unordered_map>
 #include <utility>

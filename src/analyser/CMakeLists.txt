@@ -1,3 +1,4 @@
+include_directories(${Boost_INCLUDE_DIRS})
 add_library(analyser SHARED
         histogram_measurement.cpp
         pair_measurment.cpp

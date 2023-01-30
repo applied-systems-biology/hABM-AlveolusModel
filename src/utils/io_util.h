@@ -11,10 +11,12 @@
 #ifndef ABM_UTILS_IO_UTIL_H_
 #define ABM_UTILS_IO_UTIL_H_
 
+#include <fstream>
 #include <iostream>
 #include <string>
 #include <unordered_set>
 #include <map>
+#include <memory>
 #include <unordered_map>
 #include <array>
 #include <type_traits>

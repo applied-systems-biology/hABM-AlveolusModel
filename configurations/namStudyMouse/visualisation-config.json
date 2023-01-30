@@ -1,7 +1,7 @@
 {
   "Agent-Based-Framework": {
     "activated": true,
-    "output_interval": 20,
+    "output_interval": 200,
     "camera-position": [-770, 150, 524],
     "camera-look_at": [0, 0, 0],
     "camera-angle": 20.0,

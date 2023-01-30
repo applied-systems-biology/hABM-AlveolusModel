@@ -1,3 +1,4 @@
+include_directories(${Boost_INCLUDE_DIRS})
 add_library(io SHARED
         InputConfiguration.cpp
         output_handler.cpp
