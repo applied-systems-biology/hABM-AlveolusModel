@@ -66,7 +66,7 @@ If the tests pass, the framework and its corresponding libraries were successful
 
 Generally, the executable program `build/src/hABM` must be run with a `.json` configuration file as program argument
 
-`~/hABM-AlveolusModel$ build$/src/hABM <config-file>.json` 
+`~/hABM-AlveolusModel$ build/src/hABM <config-file>.json` 
 
 Additional input files 
 - `analyser-config.json`
