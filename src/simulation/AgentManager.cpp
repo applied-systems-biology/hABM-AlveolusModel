@@ -127,7 +127,9 @@ AgentManager::replaceAgent(Site *site, Agent *agentToReplace, std::shared_ptr<Ag
 void AgentManager::removeAgent(Site *site, Agent *agent, double current_time) {
 
     // Remove agent and all its corresponding spheres in the neighbourhoodlocator
-    site->getNeighbourhoodLocator()->removeSphereRepresentation(getSphereRepBySphereRepId(agent->getId()));
+    for (auto sphRep: agent->getSurface()->getAllSpheresOfThis()) {
+        site->getNeighbourhoodLocator()->removeSphereRepresentation(sphRep);
+    }
     agent->setDeleted();
     if (agent->getTypeName().compare("AspergillusFumigatus") == 0) {
         removeConidiaFromList(agent->getId(), current_time);
