@@ -1,6 +1,6 @@
 {
   "Agent-Based-Framework": {
-    "active_measurements": ["alveole-statistics"],
+    "active_measurements": ["alveole-statistics%600", "agent-statistics%600"],
     "cell_state_count": []
   }
 }

@@ -902,8 +902,9 @@ void AlveoleSite::initializeAgents(const abm::util::SimulationParameters::AgentM
                     initialPosition = getRandomPosition();
                     break;
             }
+            int newid = name == "AspergillusFumigatus" ? agent_pos : agent_manager_->generateNewID() + 2;
             agent = agent_manager_->emplace_back(CellFactory::createCell(name, std::make_unique<Coordinate3D>(initialPosition),
-                                                                         agent_manager_->generateNewID(),this,
+                                                                         newid,this,
                                                                          time_delta, current_time));
 
             if (name == "AspergillusFumigatus") agent_manager_->addConidiaToList(agent.get());
